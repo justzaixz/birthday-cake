@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let averageFrequency = sum / bufferLength;
 
                 // Example: Adjust sensitivity threshold
-                if (averageFrequency > 120) { // Adjusted threshold
+                if (averageFrequency > 100) { // Adjusted threshold
                     // Perform actions based on audio input
                     console.log('Sound detected!');
                     // Example: Trigger blowing effect

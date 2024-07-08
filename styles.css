@@ -1,0 +1,165 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+}
+
+.cake {
+    width: 200px;
+    height: 150px;
+    background-color: hotpink;
+    position: relative;
+    border-radius: 20px;
+}
+
+.candle{
+    z-index: 2;
+}
+.candle:nth-child(1) {
+    width: 20px;
+    height: 60px;
+    background-color: #fffacd;
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 10px);
+    border-radius: 10px 10px 0 0;
+}
+
+.candle:nth-child(2){
+        width: 20px;
+        height: 60px;
+        background-color: #fffacd;
+        position: absolute;
+        top: -60px;
+        left: calc(50% - 80px);
+        border-radius: 10px 10px 0 0;
+    }
+
+
+.candle:nth-child(3){
+        width: 20px;
+        height: 60px;
+        background-color: #fffacd;
+        position: absolute;
+        top: -60px;
+        left: calc(50% + 60px);
+        border-radius: 10px 10px 0 0;
+    }
+
+
+
+
+.icing {
+    width: 200px;
+    height: 30px;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 100px);
+    border-radius: 20px 20px 0 0;
+}
+
+
+.flame {
+    width: 10px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -19px;
+    left: 5px;
+    opacity: 1; /* Ensure initial opacity is set */
+    animation: flicker 0.3s infinite alternate;
+    z-index: 1;
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.8s forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.smoke-wrap {
+    display: none; /* Hide smoke-wrap by default */
+    position: absolute;
+    width: 65px;
+    height: 70px;
+    left: -22px;
+    top: -30px;
+    animation: smoke-rise 4s forwards , blur-change 4s forwards;
+    filter: blur(2px);
+}
+@keyframes blur-change {
+    0% {
+        filter:blur(1px);
+    }
+    25% {
+        filter:blur(2px);
+    }
+    50% {
+        filter:blur(3px);
+    }
+    75% {
+        filter:blur(4px);
+    }
+
+    100% {
+        filter:blur(5px);
+    }
+}
+
+@keyframes smoke-rise {
+    from {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-200%) scale(2);
+        opacity: 0;
+    }
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+
+.sprinkle {
+    width: 5px;
+    height: 2px;
+    background-color: #ff69b4;
+    position: absolute;
+    border-radius: 2px;
+    transform: rotate(var(--angle));
+}
+
+.sprinkle:nth-child(2n) {
+    background-color: #ffd700;
+}
+
+.sprinkle:nth-child(3n) {
+    background-color: #7fff00;
+}
